@@ -111,7 +111,7 @@ void print_hdr_ip(uint8_t *buf) {
 /* Prints out ICMP header fields */
 void print_hdr_icmp(uint8_t *buf) {
   sr_icmp_t11_hdr_t *icmp_hdr = (sr_icmp_t11_hdr_t *)(buf);
-  if (icmp_hdr->icmp_code == 0 || icmp_hdr->icmp_code == 8) {
+  if (icmp_hdr->icmp_type == 0 || icmp_hdr->icmp_type == 8) {
     sr_icmp_t08_hdr_t *icmp_t08_hdr = (sr_icmp_t08_hdr_t *)(buf);
     fprintf(stderr, "ICMP Echo header:\n");
     fprintf(stderr, "\ttype: %d\n", icmp_t08_hdr->icmp_type);
